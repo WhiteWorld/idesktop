@@ -1,0 +1,30 @@
+{% extends 'metro/base.html' %}
+{% from 'metro/users.html' import show_users %}
+
+{% block content %}
+    <div class="container">
+        <div class="grid fluid">
+                {% include 'metro/user_base.html' %}
+           {{ show_users(followers,4) }}
+            <div class="pagination row">
+                <ul>
+                    {% if followers %}
+                    {% if followers.has_prev %}
+                        <li class="first"><a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid, page=1) }}"><i class="icon-first-2"></i></a></li>
+                        <li class="prev"><a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid, page=followers.prev_num) }}"><i class="icon-previous"></i></a></li>
+                        <li class="space">...</li>
+                        <li><a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid, page=followers.page - 1) }}">{{ followers.page - 1 }}</a></li>
+                    {% endif %}
+                    <li class="disabled"><a>{{ followers.page }}</a></li>
+                    {% if followers.has_next %}
+                        <li><a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid, page=followers.page + 1) }}">{{ followers.page + 1 }}</a></li>
+                        <li class="space">...</li>
+                        <li class="next"><a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid, page=followers.next_num) }}"><i class="icon-next"></i></a></li>
+                        <li class="last"><a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid, page=followers.pages) }}"><i class="icon-last-2"></i></a></li>
+                    {% endif %}
+                {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{
+  "name": "metro-ui-css",
+  "homepage": "https://github.com/olton/Metro-UI-CSS",
+  "version": "2.0.17",
+  "_release": "2.0.17",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.17",
+    "commit": "4e755df4f40b8579fc2d471d98fb0c58d1ae9d3c"
+  },
+  "_source": "git://github.com/olton/Metro-UI-CSS.git",
+  "_target": "~2.0.17",
+  "_originalSource": "metro-ui-css",
+  "_direct": true
+}

@@ -1,0 +1,17 @@
+{% extends 'metro/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="grid fluid">
+
+            <nav class="horizontal-menu">
+                <ul>
+                    <li><a href="{{ url_for('my_download') }}">downloads</a></li>
+                    <li><a href="{{ url_for('my_upload') }}">uploads</a></li>
+                </ul>
+            </nav>
+            {% block my_pictures %}
+            {% endblock %}
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<nav class="navigation-bar">
+    <nav class="navigation-bar-content container">
+        <a href="/" class="element"><span class="icon-grid-view"></span>
+            iDesktop <sup>beta</sup></a>
+
+        <span class="element-divider place-right"></span>
+        <a class="element place-right" href="/logout"><span class="icon-exit"></span> 登出</a>
+
+        <span class="element-divider place-right"></span>
+        <a class="element place-right" href="{{ url_for('setting') }}"><span class="icon-cog"></span> 设置</a>
+
+        <span class="element-divider place-right"></span>
+        {% if g.user.vdisk_uid  %}
+        <a class="element image-button image-left place-right" href="{{ url_for('user_page', vdisk_uid=g.user.vdisk_uid) }}">
+            {{ g.user.user_name }}
+            <img src="{{ g.user.profile_image_url }}" alt=""/>
+        </a>
+        {% endif %}
+    </nav>
+</nav>

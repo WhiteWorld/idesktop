@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="span3">
+        <img src="{{ user.avatar_large }}" class="polaroid" alt=""/>
+    </div>
+    <div class="span6">
+        <div class="row">
+            <div class="span4">
+                <span class="fg-cobalt bg-white">
+                    {{ user.user_name }}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            {% if user != g.user %}
+                {% if user not in g.user.follows.all() %}
+                    <a href="#" name="{{ user.id }}" class="button small primary follow">Follow</a>
+                {% else %}
+                    <a href="#" name="{{ user.id }}" class="button small primary unfollow">Unfollow</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="row">
+            <a href="{{ url_for('user_page', vdisk_uid=user.vdisk_uid) }}">
+                <button class="shortcut info">
+                    <i class="icon-download-2"></i>
+                    Download
+                    <small class="bg-cobalt fg-white">{{ user.downloads.all()|count }}</small>
+                </button>
+            </a>
+            <a href="{{ url_for('user_upload_page', vdisk_uid=user.vdisk_uid) }}">
+                <button class="shortcut success">
+                    <i class="icon-upload-3"></i>
+                    Upload
+                    <small class="bg-cobalt fg-white">{{ user.uploads.all()|count }}</small>
+                </button>
+            </a>
+            <a href="{{ url_for('user_following_page', vdisk_uid=user.vdisk_uid)}}">
+                <button class="shortcut info">
+                    Following
+                    <small class="bg-cobalt fg-white">{{ user.follows.all()|count }}</small>
+                </button>
+            </a>
+            <a href="{{ url_for('user_follower_page', vdisk_uid=user.vdisk_uid)}}">
+                <button class="shortcut info">
+                    Followers
+                    <small class="bg-cobalt fg-white" id="follower{{ user.id }}">{{ user.followed.all()|count }}</small>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

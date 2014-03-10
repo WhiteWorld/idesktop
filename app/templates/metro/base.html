@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+         {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/metro-ui-css/css/metro-bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/lightbox2/css/lightbox.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/toastr/toastr.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}">
+    {% endblock %}
+    {% block js %}
+        <script src="{{ url_for('static', filename='bower_components/jquery/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/jqueryui/ui/jquery.ui.widget.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/lightbox2/js/lightbox-2.6.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/toastr/toastr.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/metro-ui-css/min/metro.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/my.js') }}"></script>
+    {% endblock %}
+    <title>
+        {% block title %}i-desktop{% endblock %}
+    </title>
+</head>
+<body class="metro">
+<div id="wrap_all">
+<div id="wrap_content">
+  {% block header %}
+    {% include 'metro/header.html' %}
+{% endblock %}
+{% include 'metro/messages.html' %}
+{% block content %}
+{% endblock %}
+</div>
+</div>
+{% block footer %}
+    {% include 'metro/footer.html' %}
+{% endblock %}
+</body>
+</html>
