@@ -1,0 +1,12 @@
+{% extends 'metro/base.html' %}
+{% from 'metro/pagination.html' import render_pagination %}
+{% from 'metro/pictures.html' import show_pictures %}
+{% block content %}
+    <div class="container">
+        <div class="grid fluid">
+            {% include 'metro/select.html' %}
+            {{ show_pictures(pictures, 4) }}
+            {{  render_pagination(pictures, 'index') }}
+        </div>
+    </div>
+{% endblock %}

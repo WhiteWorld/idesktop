@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/metro-ui-css/css/metro-bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/lightbox2/css/lightbox.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/toastr/toastr.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css') }}">
+    {% endblock %}
+    {% block js %}
+        <script src="{{ url_for('static', filename='bower_components/jquery/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/jqueryui/ui/jquery.ui.widget.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/lightbox2/js/lightbox-2.6.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/toastr/toastr.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/metro-ui-css/min/metro.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/my.js') }}"></script>
+    {% endblock %}
+    <title>
+        {% block title %}i-desktop{% endblock %}
+    </title>
+</head>
+
+<body class="metro">
+<div id="wrap_all">
+<div id="wrap_content">
+{% block header %}
+    <nav class="navigation-bar">
+        <nav class="navigation-bar-content container">
+            <a href="/" class="element"><span class="icon-grid-view"></span>
+                iDesktop <sup>beta</sup></a>
+            <span class="element-divider place-right"></span>
+            <a class="element place-right" href="/logout"><span class="icon-enter"></span> 退出</a>
+        </nav>
+    </nav>
+{% endblock %}
+{% include 'metro/messages.html' %}
+{% block content %}
+    <div class="container">
+        <div class="grid fluid">
+            <legend><h1 class="subheader">发现最美的壁纸照片，让自己的照片成为别人的壁纸</h1></legend>
+            <div class="row">
+                <div class="span4">
+                    <div class="tile double my-vertical live" data-role="live-tile" data-effect="slideUp">
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/1.jpg!250.200" alt=""/>
+                        </div>
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/2.jpg!250.200" alt=""/>
+                        </div>
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/3.jpg!250.200" alt=""/>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="tile double my-vertical live" data-role="live-tile" data-effect="slideLeft">
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/4.jpg!250.200" alt=""/>
+                        </div>
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/5.jpg!250.200" alt=""/>
+                        </div>
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/6.jpg!250.200" alt=""/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="tile double my-vertical live" data-role="live-tile" data-effect="slideDown">
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/7.jpg!250.200" alt=""/>
+                        </div>
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/8.jpg!250.200" alt=""/>
+                        </div>
+                        <div class="tile-content image">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/9.jpg!250.200" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <legend><h1 class="subheader">只需3步， 精美壁纸立即同步到本地文件夹</h1></legend>
+            <div class="row">
+                <div class="span4">
+                        <div class="tile selected double bg-darkPink">
+                            <div class="tile-content icon">
+                                <i class="icon-enter"></i>
+                            </div>
+                            <div class="tile-status">
+                                <span class="name">
+                                    Step1 输入邮箱，注册一个帐号
+                                </span>
+                            </div>
+                        </div>
+                </div>
+                <div class="span4">
+                    <a href="{{ url_for('authorize') }}">
+                        <div class="tile double bg-amber">
+
+                            <div class="tile-content icon">
+                                <i class="icon-cloud"></i>
+                            </div>
+                            <div class="tile-status">
+                        <span class="name">
+                            Step2 连接微盘，并授权iDesktop权限
+                        </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="span4">
+                    <a href="{{ url_for('authorize') }}">
+                        <div class="tile double bg-cyan">
+
+                            <div class="tile-content icon">
+                                <i class="icon-share-2"></i>
+                            </div>
+                            <div class="tile-status">
+                        <span class="name">
+                            Step3 选择喜欢的图片下载或分享
+                        </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+{% include "metro/qa.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</div>
+</div>
+{% block footer %}
+    {% include 'metro/footer.html' %}
+{% endblock %}
+</body>
+</html>

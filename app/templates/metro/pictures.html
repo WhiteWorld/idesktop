@@ -1,0 +1,41 @@
+{% macro show_pictures(pictures, num) %}
+    <div class="row">
+        {% if pictures %}
+
+            {% for picture in pictures.items %}
+                {% if loop.index0%num == 0 %}
+                    </div>
+                    <div class="row">
+                {% endif %}
+
+                <div class="one_picture span3">
+                    <div class="image-container">
+                        <a href="http://idesktop.b0.upaiyun.com/idesktop/{{picture.yun_filename}}!900.600" data-lightbox="{{ picture.id }}" title="{{ picture.width }}X{{ picture.height}}">
+                            <img src="http://idesktop.b0.upaiyun.com/idesktop/{{picture.yun_filename}}!test" class="polaroid bg-white shadow"/>
+                        </a>
+                        {# <img src="http://placekitten.com/200/125" class="polaroid bg-white shadow"/>#}
+                        <div class="overlay-fluid">
+                            {{ picture.width }}X{{ picture.height}}
+                            <br>
+                            <a href="{{ url_for('user_page', vdisk_uid=picture.user.vdisk_uid) }}">{{ picture.user.user_name }}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {#<i class="icon-heart on-left fg-red"></i>{{ picture. }}#}
+                        {% if picture in g.user.downloads %}
+                            <a class="remove_download" href="#" name="{{ picture.id }}"><i class="icon-download-2 on-left fg-green"></i></a><span id="{{ picture.id }}">{{ picture.users.all()|count }}</span>
+                        {% else %}
+                            <a class="add_download" href="#"  name="{{ picture.id }}"><i class="icon-download-2 on-left"></i></a><span id="{{ picture.id }}">{{ picture.users.all()|count }}</span>
+                        {% endif %}
+                        {% if picture in g.user.likes %}
+                            <a class="dislike" href="#" name="{{ picture.id }}"><i class="icon-heart on-left fg-red"></i></a><span id="like{{ picture.id }}">{{ picture.liked.all()|count }}</span>
+                        {% else %}
+                            <a class="like" href="#"  name="{{ picture.id }}"><i class="icon-heart-2 on-left"></i></a><span id="like{{ picture.id }}">{{ picture.liked.all()|count }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        </div>
+{% endmacro %}

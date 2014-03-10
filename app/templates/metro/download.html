@@ -1,0 +1,7 @@
+{% extends 'metro/mine.html' %}
+{% from 'metro/pagination.html' import render_pagination %}
+{% from 'metro/pictures.html' import show_pictures %}
+{% block my_pictures %}
+    {{ show_pictures(pictures,3) }}
+    {{  render_pagination(pictures, 'my_download') }}
+{% endblock %}
