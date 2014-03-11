@@ -8,6 +8,7 @@ iDesktop访问用户的网盘文件夹下的一个idesktop目录，用户在网�
 
 查看[DEMO](http://idesktop.sturgeon.mopaas.com/)
 DEMO中，网盘使用了[微盘](http://vdisk.weibo.com/), 图片存储使用了[又拍云](https://www.upyun.com)。
+现在部署在[魔泊网](http://www.mopaas.com/portal.jsp).
 
 
 ### 使用到的技术
