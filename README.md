@@ -2,7 +2,7 @@ iDesktop
 ========
 
 ### 简介
-iDesktop，提供基于网盘同步的壁纸分享服务类似国外的[Desktoppr](https://www.desktoppr.co)。用户使用iDesktop的服务必须授权
+iDesktop，基于网盘同步的壁纸分享服务,类似国外的[Desktoppr](https://www.desktoppr.co)。用户使用iDesktop的服务必须授权
 iDesktop访问用户的网盘文件夹下的一个idesktop目录，用户在网站上点击的下载按钮的壁纸会自动同步到idesktop目录。
 用户也可以通过在idesktop放入自己的壁纸，壁纸会自动上传到网站。
 
