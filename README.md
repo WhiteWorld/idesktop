@@ -34,7 +34,11 @@ iDesktop访问用户的网盘文件夹下的一个idesktop目录，用户在网�
     - [Sentry](https://getsentry.com/welcome/) 收集生产环境中产生的错误
 
 ### [DEMO](http://idesktop.sturgeon.mopaas.com/)截图
+欢迎页面
 ![欢迎界面](screenshots/welcome.png)
+用户主页
 ![用户主页](screenshots/user_profile.png)
+首页
 ![首页](screenshots/index.png)
+设置页面
 ![设置界面](screenshots/setting.png)
