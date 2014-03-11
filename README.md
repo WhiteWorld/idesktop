@@ -38,7 +38,11 @@ DEMO中，网盘使用了[微盘](http://vdisk.weibo.com/), 图片存储使用�
     - [upyun python sdk](https://github.com/upyun/python-sdk/) 又拍云SDK-Python
 
 ### [DEMO](http://idesktop.sturgeon.mopaas.com/)截图
+欢迎页面
 ![欢迎界面](screenshots/welcome.png)
+用户主页
 ![用户主页](screenshots/user_profile.png)
+首页
 ![首页](screenshots/index.png)
+设置页面
 ![设置界面](screenshots/setting.png)
