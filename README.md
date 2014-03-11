@@ -8,6 +8,7 @@ iDesktop访问用户的网盘文件夹下的一个idesktop目录，用户在网�
 
 查看[DEMO](http://idesktop.sturgeon.mopaas.com/)
 
+
 ### 使用到的技术
 - 后端
     - [Flask](http://flask.pocoo.org/) Web框架，好用不多说
@@ -31,3 +32,9 @@ iDesktop访问用户的网盘文件夹下的一个idesktop目录，用户在网�
     - [MySQL](http://www.mysql.com/) 数据库
     - [Redis](http://redis.io/) 为消息队列和统计用户数提供强力支持
     - [Sentry](https://getsentry.com/welcome/) 收集生产环境中产生的错误
+
+### [DEMO](http://idesktop.sturgeon.mopaas.com/)截图
+![欢迎界面](screenshots/welcome.png)
+![用户主页](screenshots/user_profile.png)
+![首页](screenshots/index.png)
+![设置界面](screenshots/setting.png)
