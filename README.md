@@ -6,9 +6,9 @@ iDesktop，基于网盘同步的壁纸分享服务,类似国外的[Desktoppr](ht
 iDesktop访问用户的网盘文件夹下的一个idesktop目录，用户在网站上点击的下载按钮的壁纸会自动同步到idesktop目录。
 用户也可以通过在idesktop放入自己的壁纸，壁纸会自动上传到网站。
 
-查看[DEMO](http://idesktop.sturgeon.mopaas.com/)
+查看[DEMO](http://idesktop.fabuhui.info/)
 DEMO中，网盘使用了[微盘](http://vdisk.weibo.com/), 图片存储使用了[又拍云](https://www.upyun.com)。
-现在部署在[魔泊网](http://www.mopaas.com/portal.jsp).
+现在部署在[Digital Ocean](https://www.digitalocean.com/?refcode=ed2350733151).
 
 
 ### 使用到的技术
@@ -37,7 +37,7 @@ DEMO中，网盘使用了[微盘](http://vdisk.weibo.com/), 图片存储使用�
     - [VdiskSDK-Python](https://github.com/CloudSide/VdiskSDK-Python) 代码有点乱
     - [upyun python sdk](https://github.com/upyun/python-sdk/) 又拍云SDK-Python
 
-### [DEMO](http://idesktop.sturgeon.mopaas.com/)截图
+### [DEMO](http://idesktop.fabuhui.info/)截图
 欢迎页面
 ![欢迎界面](screenshots/welcome.png)
 用户主页
